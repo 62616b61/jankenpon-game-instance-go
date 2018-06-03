@@ -26,7 +26,7 @@ func reset (w http.ResponseWriter, r *http.Request) {
 
 func status (w http.ResponseWriter, r *http.Request) {
   status := jankenpon.Status()
-  js, err := json.Marshal(jankenpon.Status())
+  js, err := json.Marshal(status)
   if err != nil {
     http.Error(w, err.Error(), http.StatusInternalServerError)
     return
